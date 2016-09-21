@@ -1,0 +1,9 @@
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a routerLink="/signin"class="dropdown-toggle" data-toggle="dropdown">{{name}}</a>
+        <ul *ngIf="login" class="dropdown-menu" role="menu">
+            <li><a href="#">My index</a></li>
+            <li><a href="#">Log out</a></li>
+        </ul>
+    </li>
+</ul>

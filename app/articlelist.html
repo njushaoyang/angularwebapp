@@ -1,0 +1,31 @@
+<div class="col-md-8">
+<div class="blog-title">NEW POST</div>
+<div *ngFor="let article of articleList;let i = index">
+    <div class="item">
+        <div class="image-holder" [ngStyle]="{'background-image': 'url(' + article.pictureUrl + ')'}">
+            <a (click)="onSelect(article.id)"></a>
+        </div>
+        <div class="title">
+            <a class="title-ref" (click)="onSelect(article.id)">{{article?.title}}</a>
+        </div>
+        <div class="text">
+            <div>
+                {{article?.description}} <a class="text-ref" (click)="onSelect(article.id)">>></a>
+            </div>
+        </div>
+        <div class="item-header">
+            <div class="author">
+                <img class="img-circle"
+                     src="https://c9.io/blog/content/images/2015/05/brady.jpg" />
+            </div>
+            <span class="author-name"><a class="user-ref" href="#">{{article?.user?.name}}</a></span>
+            <div class="time">{{article?.release}}</div>
+        </div>
+    </div>
+</div>
+<div class="list-foot">
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+    <a *ngIf="firstPage==false" class="btn btn-success left-link" (click)="changePage(currentPage-2)">Pre</a>
+    <a *ngIf="lastPage==false" class="btn btn-success right-link" (click)="changePage(currentPage)">Next</a>
+</div>
+</div>
